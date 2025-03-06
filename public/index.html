@@ -45,10 +45,12 @@ Software.
           // ถ้าเป็นหน้าแรก ให้ redirect ไปที่ dashboard
           if (l.pathname === '/inventory/' || l.pathname === '/inventory') {
             console.log('Redirecting to dashboard...');
-            window.location.href = '/inventory/dashboard';
+            // ใช้ replace แทน href เพื่อป้องกันการวน redirect
+            window.location.replace('/inventory/dashboard');
             return;
           }
 
+          // ถ้ามี search params ให้จัดการ routing
           if (l.search) {
             console.log('Search params found:', l.search);
             var q = {};
@@ -58,6 +60,7 @@ Software.
             });
             if (q.p !== undefined) {
               console.log('Path found:', q.p);
+              // ใช้ replaceState เพื่ออัพเดท URL โดยไม่ reload หน้า
               window.history.replaceState(null, null,
                 l.pathname.slice(0, -1) + (q.p || '') +
                 (q.q ? ('?' + q.q) : '') +
