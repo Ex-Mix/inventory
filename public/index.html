@@ -39,20 +39,27 @@ Software.
     />
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
+      console.log('Starting SPA routing...');
       (function(l) {
-        if (l.search) {
-          var q = {};
-          l.search.slice(1).split('&').forEach(function(v) {
-            var a = v.split('=');
-            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-          });
-          if (q.p !== undefined) {
-            window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + (q.p || '') +
-              (q.q ? ('?' + q.q) : '') +
-              l.hash
-            );
+        try {
+          if (l.search) {
+            console.log('Search params found:', l.search);
+            var q = {};
+            l.search.slice(1).split('&').forEach(function(v) {
+              var a = v.split('=');
+              q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+            });
+            if (q.p !== undefined) {
+              console.log('Path found:', q.p);
+              window.history.replaceState(null, null,
+                l.pathname.slice(0, -1) + (q.p || '') +
+                (q.q ? ('?' + q.q) : '') +
+                l.hash
+              );
+            }
           }
+        } catch (error) {
+          console.error('Error in SPA routing:', error);
         }
       }(window.location))
     </script>
@@ -62,5 +69,11 @@ Software.
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="app"></div>
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        console.error('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error));
+        return false;
+      };
+    </script>
   </body>
 </html>
