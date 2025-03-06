@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/inventory/static/js/main.500275b1.js",
-    "static/js/198.44815df6.chunk.js": "/inventory/static/js/198.44815df6.chunk.js",
-    "static/media/pattern-tree.svg": "/inventory/static/media/pattern-tree.156bb943ac7fd244f10c115d085e085e.svg",
+    "main.js": "/inventory/static/js/main.f9cb90c7.js",
+    "static/js/952.681afc32.chunk.js": "/inventory/static/js/952.681afc32.chunk.js",
+    "static/media/pattern-tree.svg": "/inventory/static/media/pattern-tree.431da656681abcdffac51bee04d7f581.svg",
     "static/media/home-decor-3.jpg": "/inventory/static/media/home-decor-3.74d13fcbd3c631fc7908.jpg",
     "static/media/home-decor-2.jpg": "/inventory/static/media/home-decor-2.b4e5397c9846645ba275.jpg",
     "static/media/home-decor-1.jpg": "/inventory/static/media/home-decor-1.05e218fd495ccc65c99d.jpg",
@@ -20,17 +20,17 @@
     "static/media/ivana-square.jpg": "/inventory/static/media/ivana-square.f7bc23b269d1d2509c82.jpg",
     "static/media/kal-visuals-square.jpg": "/inventory/static/media/kal-visuals-square.3210e28a48ff572ae88b.jpg",
     "static/media/team-4.jpg": "/inventory/static/media/team-4.85c82b6e60178804017f.jpg",
-    "static/media/logo-slack.svg": "/inventory/static/media/logo-slack.7c47c5aa474b5c4fb39fcf05ffb8e4e7.svg",
-    "static/media/logo-xd.svg": "/inventory/static/media/logo-xd.6e37886f94dba0c2967ece68a152e30c.svg",
-    "static/media/logo-invision.svg": "/inventory/static/media/logo-invision.a1062115730dcd10e1c4f4abe7b9ab33.svg",
-    "static/media/logo-spotify.svg": "/inventory/static/media/logo-spotify.e83cf56c9d99a1fdf59e8deb58bbe470.svg",
-    "static/media/logo-jira.svg": "/inventory/static/media/logo-jira.c19fd4e416babfbd0fdb0a794188c601.svg",
-    "static/media/logo-atlassian.svg": "/inventory/static/media/logo-atlassian.f2b0e8570a4b4ce768854ff3dad1a6e1.svg",
+    "static/media/logo-slack.svg": "/inventory/static/media/logo-slack.d8feb9c5b2a92c377e8c5b7a10faabc9.svg",
+    "static/media/logo-xd.svg": "/inventory/static/media/logo-xd.77e7dd1528183ab292936e4f91241cf0.svg",
+    "static/media/logo-invision.svg": "/inventory/static/media/logo-invision.f3413d25dc0761bcc615835e48482191.svg",
+    "static/media/logo-spotify.svg": "/inventory/static/media/logo-spotify.3f055cde07c024fb2b73063b46416f1b.svg",
+    "static/media/logo-jira.svg": "/inventory/static/media/logo-jira.f9c1ddbe3e751a29bd16580977ade064.svg",
+    "static/media/logo-atlassian.svg": "/inventory/static/media/logo-atlassian.d92c4f81bb3efbf288b3ef71ce2fbfb0.svg",
     "index.html": "/inventory/index.html",
-    "main.500275b1.js.map": "/inventory/static/js/main.500275b1.js.map",
-    "198.44815df6.chunk.js.map": "/inventory/static/js/198.44815df6.chunk.js.map"
+    "main.f9cb90c7.js.map": "/inventory/static/js/main.f9cb90c7.js.map",
+    "952.681afc32.chunk.js.map": "/inventory/static/js/952.681afc32.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.500275b1.js"
+    "static/js/main.f9cb90c7.js"
   ]
 }
