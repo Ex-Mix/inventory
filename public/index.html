@@ -3,15 +3,6 @@
 * Material Dashboard 2 React - v2.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
-Software.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -39,37 +30,14 @@ Software.
     />
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
-      console.log('Starting SPA routing...');
       (function(l) {
-        try {
-          // ถ้าเป็นหน้าแรก ให้ redirect ไปที่ dashboard
-          if (l.pathname === '/inventory/' || l.pathname === '/inventory') {
-            console.log('Redirecting to dashboard...');
-            // ใช้ replace แทน href เพื่อป้องกันการวน redirect
-            window.location.replace('/inventory/dashboard');
-            return;
-          }
-
-          // ถ้ามี search params ให้จัดการ routing
-          if (l.search) {
-            console.log('Search params found:', l.search);
-            var q = {};
-            l.search.slice(1).split('&').forEach(function(v) {
-              var a = v.split('=');
-              q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-            });
-            if (q.p !== undefined) {
-              console.log('Path found:', q.p);
-              // ใช้ replaceState เพื่ออัพเดท URL โดยไม่ reload หน้า
-              window.history.replaceState(null, null,
-                l.pathname.slice(0, -1) + (q.p || '') +
-                (q.q ? ('?' + q.q) : '') +
-                l.hash
-              );
-            }
-          }
-        } catch (error) {
-          console.error('Error in SPA routing:', error);
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
         }
       }(window.location))
     </script>
