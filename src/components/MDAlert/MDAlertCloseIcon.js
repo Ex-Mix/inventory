@@ -15,8 +15,9 @@ Coded by www.creative-tim.com
 
 // @mui material components
 import { styled } from "@mui/material/styles";
+import PropTypes from "prop-types";
 
-export default styled("span")(({ theme }) => {
+const MDAlertCloseIcon = styled("span")(({ theme }) => {
   const { palette, typography, functions } = theme;
 
   const { white } = palette;
@@ -33,3 +34,10 @@ export default styled("span")(({ theme }) => {
     lineHeight: 0,
   };
 });
+
+// Typechecking props of the MDAlertCloseIcon
+MDAlertCloseIcon.propTypes = {
+  onClick: PropTypes.func,
+};
+
+export default MDAlertCloseIcon;
