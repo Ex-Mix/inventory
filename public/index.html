@@ -42,6 +42,13 @@ Software.
       console.log('Starting SPA routing...');
       (function(l) {
         try {
+          // ถ้าเป็นหน้าแรก ให้ redirect ไปที่ dashboard
+          if (l.pathname === '/inventory/' || l.pathname === '/inventory') {
+            console.log('Redirecting to dashboard...');
+            window.location.href = '/inventory/dashboard';
+            return;
+          }
+
           if (l.search) {
             console.log('Search params found:', l.search);
             var q = {};
