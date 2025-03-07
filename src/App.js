@@ -170,7 +170,7 @@ export default function App() {
           {layout === "vr" && <Configurator />}
           <Routes>
             {getRoutes(routes)}
-            <Route path="*" element={<Navigate to="/inventory/dashboard" />} />
+            <Route path="*" element={<Navigate to="/dashboard" />} />
           </Routes>
         </Router>
       </ThemeProvider>
@@ -196,7 +196,7 @@ export default function App() {
         {layout === "vr" && <Configurator />}
         <Routes>
           {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/inventory/dashboard" />} />
+          <Route path="*" element={<Navigate to="/dashboard" />} />
         </Routes>
       </Router>
     </ThemeProvider>
