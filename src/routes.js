@@ -63,7 +63,7 @@ const routes = [
     name: "Dashboard",
     key: "dashboard",
     icon: <Icon fontSize="small">dashboard</Icon>,
-    route: "/inventory/dashboard",
+    route: "/dashboard",
     component: <Dashboard />,
   },
   {
@@ -71,7 +71,7 @@ const routes = [
     name: "Tables",
     key: "tables",
     icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/inventory/tables",
+    route: "/tables",
     component: <Tables />,
   },
   {
@@ -79,7 +79,7 @@ const routes = [
     name: "Billing",
     key: "billing",
     icon: <Icon fontSize="small">receipt_long</Icon>,
-    route: "/inventory/billing",
+    route: "/billing",
     component: <Billing />,
   },
   {
@@ -87,7 +87,7 @@ const routes = [
     name: "RTL",
     key: "rtl",
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
-    route: "/inventory/rtl",
+    route: "/rtl",
     component: <RTL />,
   },
   {
@@ -95,7 +95,7 @@ const routes = [
     name: "Notifications",
     key: "notifications",
     icon: <Icon fontSize="small">notifications</Icon>,
-    route: "/inventory/notifications",
+    route: "/notifications",
     component: <Notifications />,
   },
   {
@@ -103,7 +103,7 @@ const routes = [
     name: "Profile",
     key: "profile",
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/inventory/profile",
+    route: "/profile",
     component: <Profile />,
   },
   {
@@ -111,7 +111,7 @@ const routes = [
     name: "Sign In",
     key: "sign-in",
     icon: <Icon fontSize="small">login</Icon>,
-    route: "/inventory/authentication/sign-in",
+    route: "/authentication/sign-in",
     component: <SignIn />,
   },
   {
@@ -119,7 +119,7 @@ const routes = [
     name: "Sign Up",
     key: "sign-up",
     icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/inventory/authentication/sign-up",
+    route: "/authentication/sign-up",
     component: <SignUp />,
   },
 ];
