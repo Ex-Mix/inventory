@@ -153,6 +153,32 @@ export default function App() {
       <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
         <CssBaseline />
         <Router basename="/inventory">
+          {layout === "dashboard" && (
+            <>
+              <Sidenav
+                color={sidenavColor}
+                brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+                brandName="Material Dashboard 2"
+                routes={routes}
+                onMouseEnter={handleOnMouseEnter}
+                onMouseLeave={handleOnMouseLeave}
+              />
+              <Configurator />
+              {configsButton}
+            </>
+          )}
+          {layout === "vr" && <Configurator />}
+          <Routes>
+            {getRoutes(routes)}
+            <Route path="*" element={<Navigate to="/inventory/dashboard" />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </CacheProvider>
+  ) : (
+    <ThemeProvider theme={darkMode ? themeDark : theme}>
+      <CssBaseline />
+      <Router basename="/inventory">
         {layout === "dashboard" && (
           <>
             <Sidenav
@@ -172,32 +198,6 @@ export default function App() {
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/inventory/dashboard" />} />
         </Routes>
-        </Router>
-      </ThemeProvider>
-    </CacheProvider>
-  ) : (
-    <ThemeProvider theme={darkMode ? themeDark : theme}>
-      <CssBaseline />
-      <Router basename="/inventory">
-      {layout === "dashboard" && (
-        <>
-          <Sidenav
-            color={sidenavColor}
-            brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Material Dashboard 2"
-            routes={routes}
-            onMouseEnter={handleOnMouseEnter}
-            onMouseLeave={handleOnMouseLeave}
-          />
-          <Configurator />
-          {configsButton}
-        </>
-      )}
-      {layout === "vr" && <Configurator />}
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/inventory/dashboard" />} />
-      </Routes>
       </Router>
     </ThemeProvider>
   );
