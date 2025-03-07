@@ -53,6 +53,8 @@ import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "co
 import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
 
+import { BrowserRouter as Router } from "react-router-dom";
+
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
   const {
@@ -150,6 +152,7 @@ export default function App() {
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
         <CssBaseline />
+        <Router basename="/inventory">
         {layout === "dashboard" && (
           <>
             <Sidenav
@@ -169,11 +172,13 @@ export default function App() {
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/inventory/dashboard" />} />
         </Routes>
+        </Router>
       </ThemeProvider>
     </CacheProvider>
   ) : (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
       <CssBaseline />
+      <Router basename="/inventory">
       {layout === "dashboard" && (
         <>
           <Sidenav
@@ -193,6 +198,7 @@ export default function App() {
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/inventory/dashboard" />} />
       </Routes>
+      </Router>
     </ThemeProvider>
   );
 }
