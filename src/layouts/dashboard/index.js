@@ -20,10 +20,9 @@ import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatist
 // Dashboard components
 import { useDashboardData } from "./data/dashboardData";
 import DashboardCharts from "./components/DashboardCharts";
-import StockTable from "./components/StockTable";
 
 function Dashboard() {
-  const { statistics, charts, stock, loading, error } = useDashboardData();
+  const { statistics = {}, charts, stock, loading, error } = useDashboardData();
 
   if (loading) {
     return (
@@ -49,6 +48,17 @@ function Dashboard() {
     );
   }
 
+  // กำหนดค่าเริ่มต้นสำหรับ statistics
+  const {
+    monthlySales = [],
+    salesByLocation = [],
+    salesByProduct = [],
+    totalImports = 0,
+    totalSales = 0,
+    totalLocations = 0,
+    totalProducts = 0,
+  } = statistics;
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -61,7 +71,7 @@ function Dashboard() {
                 color="info"
                 icon="shopping_cart"
                 title="ยอดขายรวม"
-                count={`${statistics.totalSales.toLocaleString()} บาท`}
+                count={`${totalSales.toLocaleString()} บาท`}
                 percentage={{
                   color: "success",
                   amount: "",
@@ -76,7 +86,7 @@ function Dashboard() {
                 color="success"
                 icon="inventory"
                 title="ยอดนำเข้าสินค้า"
-                count={`${statistics.totalImports.toLocaleString()} บาท`}
+                count={`${totalImports.toLocaleString()} บาท`}
                 percentage={{
                   color: "success",
                   amount: "",
@@ -91,7 +101,7 @@ function Dashboard() {
                 color="warning"
                 icon="store"
                 title="จำนวนสาขา"
-                count={statistics.totalLocations}
+                count={totalLocations}
                 percentage={{
                   color: "success",
                   amount: "",
@@ -106,7 +116,7 @@ function Dashboard() {
                 color="primary"
                 icon="category"
                 title="จำนวนสินค้า"
-                count={statistics.totalProducts}
+                count={totalProducts}
                 percentage={{
                   color: "success",
                   amount: "",
@@ -115,20 +125,8 @@ function Dashboard() {
               />
             </MDBox>
           </Grid>
-
-          {/* กราฟ */}
           <Grid item xs={12}>
-            <DashboardCharts
-              dailySales={charts.dailySales}
-              dailyImports={charts.dailyImports}
-              salesByLocation={charts.salesByLocation}
-              importsByLocation={charts.importsByLocation}
-            />
-          </Grid>
-
-          {/* ตารางสินค้าคงเหลือ */}
-          <Grid item xs={12}>
-            <StockTable stockData={stock} />
+            <DashboardCharts /> {/* เพิ่มกราฟ */}
           </Grid>
         </Grid>
       </MDBox>

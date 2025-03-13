@@ -29,57 +29,15 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 
 // Data
-import Sale from "layouts/tables/data/Sale";
-import Import from "layouts/tables/data/Import";
+import DashboardDataTables from "./data/testtable";
 
 function Tables() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox pt={6} pb={3}>
-        <Grid container spacing={6}>
-          <Grid item xs={12}>
-            <Card>
-              <MDBox
-                mx={2}
-                mt={-3}
-                py={3}
-                px={2}
-                variant="gradient"
-                bgColor="info"
-                borderRadius="lg"
-                coloredShadow="info"
-              >
-                <MDTypography variant="h6" color="white">
-                  ข้อมูลการขาย
-                </MDTypography>
-              </MDBox>
-              <MDBox pt={1}>
-                <Sale />
-              </MDBox>
-            </Card>
-          </Grid>
-          <Grid item xs={12}>
-            <Card>
-              <MDBox
-                mx={2}
-                mt={-3}
-                py={3}
-                px={2}
-                variant="gradient"
-                bgColor="info"
-                borderRadius="lg"
-                coloredShadow="info"
-              >
-                <MDTypography variant="h6" color="white">
-                  ข้อมูลการนำเข้า
-                </MDTypography>
-              </MDBox>
-              <MDBox pt={1}>
-                <Import />
-              </MDBox>
-            </Card>
-          </Grid>
+        <Grid item xs={12}>
+          <DashboardDataTables />
         </Grid>
       </MDBox>
       <Footer />
